@@ -1,0 +1,152 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "titulo": "Fundamentos del Voleibol",
+      "categoria": "Fundamentos",
+      "modalidad": "En línea",
+      "precio": "$500 MXN"
+    },
+    {
+      "id": 2,
+      "titulo": "Técnica de Recepción y Defensa",
+      "categoria": "Fundamentos",
+      "modalidad": "En vivo",
+      "precio": "$750 MXN"
+    },
+    {
+      "id": 3,
+      "titulo": "Máster en Remate",
+      "categoria": "Táctica",
+      "modalidad": "En línea",
+      "precio": "$900 MXN"
+    },
+    {
+      "id": 4,
+      "titulo": "Fundamentos para Colocadores",
+      "categoria": "Táctica",
+      "modalidad": "En vivo",
+      "precio": "$850 MXN"
+    },
+    {
+      "id": 5,
+      "titulo": "Estrategia y Sistemas de Juego",
+      "categoria": "Táctica",
+      "modalidad": "En línea",
+      "precio": "$1,200 MXN"
+    },
+    {
+      "id": 6,
+      "titulo": "Pack 22 Cursos Completos",
+      "categoria": "Packs",
+      "modalidad": "En línea",
+      "precio": "$8,500 MXN"
+    }
+  ],
+  "trayectoria": {
+    "bio": "Con más de 15 años dedicados al voleibol, el ProfeGüero ha formado a cientos de jóvenes atletas en secundaria, preparatoria y universidad. Su pasión es transformar el potencial de cada alumno en resultados reales dentro y fuera de la cancha, combinando ciencia del deporte con experiencia competitiva internacional.",
+    "logros": [
+      "Jugador Profesional de Voleibol",
+      "Doctorado en Ciencias del Deporte",
+      "Certificación FIVB Nivel 2",
+      "Entrenador de Selecciones Estatales",
+      "Más de 500 alumnos formados",
+      "Ponente en congresos internacionales de voleibol"
+    ],
+    "diplomas": [
+      {
+        "id": 1,
+        "nombre": "Doctorado en Ciencias del Deporte",
+        "institucion": "Universidad Autónoma de Nuevo León"
+      },
+      {
+        "id": 2,
+        "nombre": "Maestría en Entrenamiento Deportivo",
+        "institucion": "Escuela Nacional de Entrenadores Deportivos"
+      },
+      {
+        "id": 3,
+        "nombre": "Certificación FIVB Nivel 2",
+        "institucion": "Federación Internacional de Voleibol"
+      },
+      {
+        "id": 4,
+        "nombre": "Diplomado en Preparación Física",
+        "institucion": "Comité Olímpico Mexicano"
+      }
+    ]
+  },
+  "testimonios": [
+    {
+      "id": 1,
+      "nombre": "Carlos Mendoza",
+      "comentario": "Gracias al ProfeGüero mi hijo pasó de no saber sacar a ser titular en su selección estatal. La metodología es clara y los resultados se ven desde la primera semana.",
+      "rol": "Padre de familia"
+    },
+    {
+      "id": 2,
+      "nombre": "Daniela Ríos",
+      "comentario": "Tomé el curso de colocación y mejoré mi técnica al 100%. El Profe te corrige en tiempo real y se adapta a tu nivel. Totalmente recomendado.",
+      "rol": "Alumna"
+    },
+    {
+      "id": 3,
+      "nombre": "Roberto Salinas",
+      "comentario": "Llevamos dos temporadas trabajando con el ProfeGüero en nuestro equipo universitario. La preparación táctica que nos dio fue clave para llegar a la final nacional.",
+      "rol": "Alumno"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "titulo": "Entrenamiento de Remate — Técnica Explosiva",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "miniatura": "https://placehold.co/640x360/0A192F/FF6B00?text=Remate"
+    },
+    {
+      "id": 2,
+      "titulo": "Ejercicios de Recepción en Cancha",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "miniatura": "https://placehold.co/640x360/0A192F/FF6B00?text=Recepción"
+    },
+    {
+      "id": 3,
+      "titulo": "Campamento de Verano 2025 — Highlights",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "miniatura": "https://placehold.co/640x360/0A192F/FF6B00?text=Campamento"
+    }
+  ],
+  "campamentos": [
+    {
+      "id": 1,
+      "nombre": "Campamento de Invierno",
+      "fecha": "Diciembre 2026",
+      "descripcion": "Dos semanas intensivas de entrenamiento técnico y táctico. Ideal para cerrar el año con nivel competitivo.",
+      "icono": "Snowflake"
+    },
+    {
+      "id": 2,
+      "nombre": "Campamento de Semana Santa",
+      "fecha": "Abril 2027",
+      "descripcion": "Una semana de convivencia deportiva con jugadores de todo México. Enfoque en trabajo en equipo y sistemas de juego.",
+      "icono": "Sun"
+    },
+    {
+      "id": 3,
+      "nombre": "Campamento de Verano",
+      "fecha": "Julio 2027",
+      "descripcion": "El campamento más completo: tres semanas de formación integral con evaluación final y certificado de participación.",
+      "icono": "Flame"
+    }
+  ],
+  "material": {
+    "promocion": "PROMO CLUBES: Compra 5 balones oficiales y el 6to es GRATIS",
+    "descripcion": "Balones de entrenamiento y competencia certificados, redes profesionales, rodilleras y más. Equipa a tu equipo con material de primer nivel.",
+    "cta": "Cotizar material deportivo"
+  },
+  "consultoria": {
+    "titulo": "Asesoría para Gimnasios y Clubes",
+    "descripcion": "Diseño de rutinas de preparación física, planes de entrenamiento por temporada, evaluación de atletas y consultoría táctica para equipos competitivos. Lleva tu gimnasio o club deportivo al siguiente nivel con metodología basada en ciencia del deporte.",
+    "cta": "Solicitar asesoría profesional"
+  }
+}
