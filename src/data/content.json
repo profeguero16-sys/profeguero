@@ -57,22 +57,26 @@
       {
         "id": 1,
         "nombre": "Doctorado en Ciencias del Deporte",
-        "institucion": "Universidad Autónoma de Nuevo León"
+        "institucion": "Universidad Autónoma de Nuevo León",
+        "pdf": "/docs/doctorado-ciencias-deporte.pdf"
       },
       {
         "id": 2,
         "nombre": "Maestría en Entrenamiento Deportivo",
-        "institucion": "Escuela Nacional de Entrenadores Deportivos"
+        "institucion": "Escuela Nacional de Entrenadores Deportivos",
+        "pdf": "/docs/maestria-entrenamiento-deportivo.pdf"
       },
       {
         "id": 3,
         "nombre": "Certificación FIVB Nivel 2",
-        "institucion": "Federación Internacional de Voleibol"
+        "institucion": "Federación Internacional de Voleibol",
+        "pdf": "/docs/certificacion-fivb-nivel2.pdf"
       },
       {
         "id": 4,
         "nombre": "Diplomado en Preparación Física",
-        "institucion": "Comité Olímpico Mexicano"
+        "institucion": "Comité Olímpico Mexicano",
+        "pdf": "/docs/diplomado-preparacion-fisica.pdf"
       }
     ]
   },

@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import { Globe, Share2, Play, Mail } from 'lucide-react';
 import { getWhatsAppLink } from '../utils/whatsapp';
+import { useScrollReveal } from '../utils/useScrollReveal';
 
 const SOCIALS = [
   { icon: Globe, href: '#', label: 'Instagram' },
@@ -16,9 +18,17 @@ const FOOTER_LINKS = [
 ];
 
 export default function Footer() {
+  const { ref, inView } = useScrollReveal({ amount: 0.1, once: true });
+
   return (
     <>
-      <footer className="bg-brand-navy border-t border-white/10 pt-16 pb-28 sm:pb-8 px-4">
+      <motion.footer
+        ref={ref}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="bg-brand-navy border-t border-white/10 pt-16 pb-28 sm:pb-8 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
@@ -85,7 +95,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-      </footer>
+      </motion.footer>
 
       {/* ========== BOTÓN FLOTANTE WHATSAPP ========== */}
       <a

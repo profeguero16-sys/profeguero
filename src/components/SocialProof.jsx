@@ -1,32 +1,55 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Quote, Play, X } from 'lucide-react';
+import { useScrollReveal } from '../utils/useScrollReveal';
 import data from '../data/content.json';
 
 const { testimonios, videos } = data;
 
 export default function SocialProof() {
   const [activeVideo, setActiveVideo] = useState(null);
+  const { ref: refTest, inView: inViewTest } = useScrollReveal();
+  const { ref: refVid, inView: inViewVid } = useScrollReveal();
 
   return (
     <section className="bg-slate-50 py-20 px-4">
       <div className="max-w-6xl mx-auto">
 
         {/* ---------- TESTIMONIOS ---------- */}
-        <div className="mb-20">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-brand-navy text-center mb-4">
+        <div className="mb-20" ref={refTest}>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={inViewTest ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="font-heading font-bold text-3xl sm:text-4xl text-brand-navy text-center mb-4"
+          >
             Lo que dicen nuestros alumnos
-          </h2>
-          <p className="font-body text-gray-500 text-center max-w-xl mx-auto mb-12">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inViewTest ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-body text-gray-500 text-center max-w-xl mx-auto mb-12"
+          >
             Resultados reales de atletas y familias que confiaron en el ProfeGüero.
-          </p>
+          </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonios.map((t) => (
-              <div
+            {testimonios.map((t, i) => (
+              <motion.div
                 key={t.id}
-                className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-4 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, y: 40 }}
+                animate={inViewTest ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 + i * 0.12 }}
+                whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(10,25,47,0.12)' }}
+                className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-4 border border-gray-100"
               >
-                <Quote size={32} className="text-brand-orange shrink-0" />
+                <motion.div
+                  animate={{ rotate: [0, -5, 5, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.7 }}
+                >
+                  <Quote size={32} className="text-brand-orange shrink-0" />
+                </motion.div>
                 <p className="font-body text-gray-600 text-sm sm:text-base leading-relaxed flex-1">
                   {t.comentario}
                 </p>
@@ -38,26 +61,41 @@ export default function SocialProof() {
                     {t.rol}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* ---------- GALERÍA DE VIDEOS ---------- */}
-        <div>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-brand-navy text-center mb-4">
+        <div ref={refVid}>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={inViewVid ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="font-heading font-bold text-3xl sm:text-4xl text-brand-navy text-center mb-4"
+          >
             ProfeGüero en Acción
-          </h2>
-          <p className="font-body text-gray-500 text-center max-w-xl mx-auto mb-12">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inViewVid ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-body text-gray-500 text-center max-w-xl mx-auto mb-12"
+          >
             Mira cómo se entrena con el Profe: técnica, intensidad y resultados.
-          </p>
+          </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {videos.map((v) => (
-              <button
+            {videos.map((v, i) => (
+              <motion.button
                 key={v.id}
                 onClick={() => setActiveVideo(v)}
-                className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 aspect-video bg-brand-navy cursor-pointer"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={inViewVid ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 + i * 0.12 }}
+                whileHover={{ scale: 1.03, boxShadow: '0 20px 40px rgba(0,0,0,0.25)' }}
+                whileTap={{ scale: 0.97 }}
+                className="group relative rounded-2xl overflow-hidden shadow-md aspect-video bg-brand-navy cursor-pointer"
               >
                 <img
                   src={v.miniatura}
@@ -65,51 +103,65 @@ export default function SocialProof() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-brand-navy/50 group-hover:bg-brand-navy/30 transition-colors duration-300 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-brand-orange/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <motion.div
+                    className="w-16 h-16 rounded-full bg-brand-orange/90 flex items-center justify-center shadow-lg"
+                    whileHover={{ scale: 1.15 }}
+                    animate={{ boxShadow: ['0 0 0 0 rgba(255,107,0,0.4)', '0 0 0 12px rgba(255,107,0,0)', '0 0 0 0 rgba(255,107,0,0)'] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
+                  >
                     <Play size={28} className="text-white ml-1" fill="white" />
-                  </div>
+                  </motion.div>
                 </div>
-                {/* Título */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
                   <p className="font-heading font-bold text-white text-sm text-left leading-snug">
                     {v.titulo}
                   </p>
                 </div>
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
       </div>
 
       {/* ---------- MODAL DE VIDEO ---------- */}
-      {activeVideo && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div
-            className="relative w-full max-w-4xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setActiveVideo(null)}
           >
-            <button
-              onClick={() => setActiveVideo(null)}
-              className="absolute -top-10 right-0 text-white hover:text-brand-orange transition-colors cursor-pointer"
-              aria-label="Cerrar video"
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="relative w-full max-w-4xl aspect-video"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X size={28} />
-            </button>
-            <iframe
-              src={activeVideo.url}
-              title={activeVideo.titulo}
-              className="w-full h-full rounded-xl"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute -top-10 right-0 text-white hover:text-brand-orange transition-colors cursor-pointer"
+                aria-label="Cerrar video"
+              >
+                <X size={28} />
+              </button>
+              <iframe
+                src={activeVideo.url}
+                title={activeVideo.titulo}
+                className="w-full h-full rounded-xl"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
