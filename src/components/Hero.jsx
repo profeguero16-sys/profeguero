@@ -192,7 +192,7 @@ export default function Hero() {
 
       {/* ── Resplandor central ── */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-orange/5 blur-3xl pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-brand-orange/5 blur-3xl pointer-events-none"
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
