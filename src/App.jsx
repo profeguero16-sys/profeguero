@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <Navbar />
       <main>
         <Hero />
@@ -20,7 +20,7 @@ function App() {
         <Marketplace />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
